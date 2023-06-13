@@ -1,6 +1,6 @@
 # Lesson 6 Template: Insurance Claims Prediction
 
-Simple Flask tamplate for ML model predictions via (1) HTML Form (2) API requests.
+Simple Flask template for ML model predictions via (1) HTML Form (2) API requests.
 
 ## About This Repo
 
