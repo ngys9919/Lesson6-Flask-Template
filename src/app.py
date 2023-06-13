@@ -14,8 +14,8 @@ def home():
 
 
 # Method 2: Via POST API
-@app.route('/api/predict_one', methods=['POST'])
-def predict_one():
+@app.route('/api/predict', methods=['POST'])
+def predict():
     request_data = request.get_json()
     print(request_data)
 
