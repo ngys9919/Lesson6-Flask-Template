@@ -3,6 +3,7 @@
 
 <head>
     <title>Predict Insurance Charges</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 
 <body>
@@ -111,9 +112,24 @@
         <!-- TODO 3: Add h2 element to display model prediction  -->
         <!--         (Use Jinja templating with if condition)    -->
         {% if prediction is defined %}
-        <h2>Model Prediction: {{ prediction }}</h2>
+            <h2>Model Prediction: {{ prediction }}</h2>
+            <!-- This approach is preferred because of separation of concerns, 
+            user interface is in index.html (here) and business logic is in app.py.
+            cf: Method1 in app.py
+            Method2: This method uses Jinja templating to display the prediction text.
+            This will display the prediction based on the value of the prediction variable. -->
+            <!-- If prediction is 0, display "Customer is likely to churn." -->
+            <!-- If prediction is 1, display "Customer is unlikely to churn." -->
+            <!-- If prediction is not defined, display "Click 'Predict' to generate Model Prediction!" -->
+            {% if prediction==0 %}
+                <h3>Customer is likely to churn.</h3>
+            {% elif prediction==1 %}
+                <h3>Customer is unlikely to churn.</h3>
+            {% else %}
+                <h3>Undefined!</h3>
+            {% endif %}
         {% else %}
-        <h2>Click "Predict" to generate Model Prediction!</h2>
+            <h2>Click "Predict" to generate Model Prediction!</h2>
         {% endif %}
     </div>
 </body>

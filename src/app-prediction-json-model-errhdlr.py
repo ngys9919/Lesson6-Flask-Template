@@ -71,7 +71,8 @@ def predict():
     
     for key in required_keys:
         if key not in request_data:
-            return {'success': False, 'error': f'Missing required input data: {key}'}, 400
+            # return {'success': False, 'error': f'Missing required input data: {key}'}, 400
+            return {'error': f'"{key}" not found in json.'}, 400
         
     # Check if request_data is empty
     if not request_data:
