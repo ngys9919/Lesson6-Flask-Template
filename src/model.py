@@ -7,3 +7,4 @@ class Model:
 
     def predict(self, input_features):
         return self.model.predict(input_features)
+
